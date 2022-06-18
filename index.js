@@ -45,10 +45,10 @@ function getColor(uptimeVal) {
   return uptimeVal == null
     ? "nodata"
     : uptimeVal == 1
-    ? "success"
-    : uptimeVal < 0.3
-    ? "failure"
-    : "partial";
+      ? "success"
+      : uptimeVal < 0.3
+        ? "failure"
+        : "partial";
 }
 
 function constructStatusSquare(key, date, uptimeVal) {
@@ -110,24 +110,24 @@ function getStatusText(color) {
   return color == "nodata"
     ? "No Data Available"
     : color == "success"
-    ? "Fully Operational"
-    : color == "failure"
-    ? "Major Outage"
-    : color == "partial"
-    ? "Partial Outage"
-    : "Unknown";
+      ? "Fully Operational"
+      : color == "failure"
+        ? "Major Outage"
+        : color == "partial"
+          ? "Partial Outage"
+          : "Unknown";
 }
 
 function getStatusDescriptiveText(color) {
   return color == "nodata"
     ? "No Data Available: Health check was not performed."
     : color == "success"
-    ? "No downtime recorded on this day."
-    : color == "failure"
-    ? "Major outages recorded on this day."
-    : color == "partial"
-    ? "Partial outages recorded on this day."
-    : "Unknown";
+      ? "No downtime recorded on this day."
+      : color == "failure"
+        ? "Major outages recorded on this day."
+        : color == "partial"
+          ? "Partial outages recorded on this day."
+          : "Unknown";
 }
 
 function getTooltip(key, date, quartile, color) {
