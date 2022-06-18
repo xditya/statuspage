@@ -1,18 +1,52 @@
 <html>
 
 <head>
-  <title>Status Page</title>
+  <title>[@xditya] Status Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="logo.svg" type="image/x-icon">
   <script src="index.js"></script>
 </head>
+<style>
+  body {
+    padding: 25px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+  }
+
+  .dark-mode {
+    background-color: white;
+    color: black;
+  }
+
+  .btn {
+    cursor: pointer;
+    border: 1px solid #3498db;
+    background-color: transparent;
+    height: 20px;
+    width: 15px;
+    color: #3498db;
+    font-size: 20px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+</style>
 
 <body>
+  <p align="right">
+    <button class="btn" onclick="darkMode()"></button>
+  </p>
   <div class="pageContainer">
     <div class="headline">
-      <img src="logo.svg" alt="Logo" width="200px" />
-      <span> System Status </span>
+      <img src="logo.svg" alt="Logo" width="150px" />
+      <span class="dark-mode"> Server Status </span>
     </div>
+    <script>
+      function darkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    </script>
     <div id="reports" class="reportContainer"></div>
     <div id="tooltip" class="tooltip" style="opacity: 0">
       <div id="tooltipArrow" class="tooltipArrow"></div>
@@ -38,9 +72,8 @@
     </div>
   </div>
   <footer>
-    Forked from
-    <a href="https://github.com/statsig-io/statuspage/">Statsig's Open-Source Status Page</a>. Queries - <a
-      href="https://xditya.me/tg">Contact me</a>
+    <a href="https://github.com/xditya">@xditya</a> | <a href=" https://xditya.me/tg">Contact me</a> | <a
+      href="https://github.com/xditya/statuspage">Source</a>
   </footer>
 </body>
 <script>
