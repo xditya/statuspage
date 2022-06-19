@@ -1,3 +1,11 @@
+# Use the original repository and not this fork!
+This fork has been modified for personal use.
+
+This fork features:
+- dark/light theme with a trash toggle (idk css)
+- trash codes (but works, yay!)
+- the [tests branch](https://github.com/xditya/statuspage/tree/tests) facilitates hosting the [index.html](index.html) file on other websites (like I did in https://xditya.me/status/), by using the GitHub API.
+
 [![Health Check](../../actions/workflows/health-check.yml/badge.svg)](../../actions/workflows/health-check.yml)
 
 # Statsig's Open-Source Status Page
