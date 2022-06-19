@@ -1,12 +1,13 @@
 const maxDays = 30;
 
 async function genReportLog(container, key, url) {
-  const response = await fetch("logs/" + key + "_report.log");
-  let statusLines = "";
+  const response = await fetch("https://api.github.com/repos/xditya/StatusPage/contents/logs/" + key + "_report.log");
+  let statusLines = "", json_res, encoded_res;
   if (response.ok) {
-    statusLines = await response.text();
+    json_res = await response.json();
+    encoded_res = json_res['content'].replace(/\n|\r/g, ""); // replace all \n's
+    statusLines = atob(encoded_res);
   }
-
   const normalized = normalizeData(statusLines);
   const statusStream = constructStatusStream(key, url, normalized);
   container.appendChild(statusStream);
@@ -246,7 +247,6 @@ async function genAllReports() {
     if (!key || !url) {
       continue;
     }
-
     await genReportLog(document.getElementById("reports"), key, url);
   }
 }
